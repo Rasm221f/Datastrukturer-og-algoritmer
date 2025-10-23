@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Computeren gætter tallet</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <main class="app">
+    <h1>Computeren gætter tallet</h1>
+
+    <p class="intro">
+      Tænk på et helt tal. Computeren gætter — og du fortæller om gættet er
+      <em>for lavt</em>, <em>for højt</em> eller <em>korrekt</em>.
+      I denne version er gættene tilfældige (ingen algoritme).
+    </p>
+
+    <section class="status">
+      <div class="guessbox" aria-live="polite" aria-atomic="true">
+        <span>Mit gæt:</span>
+        <strong id="guessDisplay">—</strong>
+      </div>
+      <div class="counter">Forsøg: <span id="attempts">0</span></div>
+    </section>
+
+    <section class="controls">
+      <button id="btn_low" class="btn">For lavt</button>
+      <button id="btn_high" class="btn">For højt</button>
+      <button id="btn_correct" class="btn btn-primary">Korrekt</button>
+      <button id="btn_restart" class="btn btn-ghost" title="Start en ny runde">Ny runde</button>
+    </section>
+
+    <section>
+      <h2>Seneste gæt</h2>
+      <ul id="history" class="history" aria-live="polite" aria-atomic="false"></ul>
+    </section>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
