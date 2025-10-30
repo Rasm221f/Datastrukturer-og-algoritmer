@@ -1,0 +1,129 @@
+:root{
+  --bg: #f7fbff;
+  --card: #ffffff;
+  --text: #102a43;
+  --muted: #486581;
+  --primary: #1f7aed;
+  --primary-contrast: #ffffff;
+  --border: #d9e2ec;
+  --ok: #0a7d00;
+  --warn: #b23b00;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+
+body{
+  margin: 0;
+  background: linear-gradient(180deg, var(--bg), #eef5ff 60%);
+  color: var(--text);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.45;
+}
+
+.app{
+  max-width: 720px;
+  margin: 32px auto;
+  padding: 16px;
+}
+
+h1{
+  margin: 0 0 8px;
+  letter-spacing: .2px;
+}
+
+.intro{
+  color: var(--muted);
+  margin: 0 0 20px;
+}
+
+.status{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: center;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 14px 16px;
+  box-shadow: 0 6px 16px rgba(16,42,67,.06);
+}
+
+.guessbox{
+  font-size: 1.1rem;
+}
+.guessbox strong{
+  font-size: 1.8rem;
+  margin-left: 10px;
+}
+
+.counter{
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+
+.controls{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 16px 0 6px;
+}
+
+.btn{
+  appearance: none;
+  border: 1px solid var(--border);
+  background: var(--card);
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform .02s ease, box-shadow .15s ease;
+  box-shadow: 0 4px 12px rgba(16,42,67,.05);
+}
+.btn:hover{ transform: translateY(-1px); }
+.btn:active{ transform: translateY(0); }
+.btn:disabled{
+  opacity: .55;
+  cursor: not-allowed;
+}
+
+.btn-primary{
+  background: var(--primary);
+  color: var(--primary-contrast);
+  border-color: transparent;
+}
+
+.btn-ghost{
+  background: transparent;
+  border-style: dashed;
+  color: var(--muted);
+}
+
+.history{
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+  display: grid;
+  gap: 8px;
+}
+
+.history li{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tag{
+  font-size: .85rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.tag-low{ color: var(--ok); border-color: #bfe4bf; background: #f1fff1; }
+.tag-high{ color: var(--warn); border-color: #ffd7bf; background: #fff5ef; }
+.tag-correct{ color: #0b5; border-color: #bdf3dc; background: #effff7; font-weight: 600; }
